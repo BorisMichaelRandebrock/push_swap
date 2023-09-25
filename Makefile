@@ -6,7 +6,7 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/09/22 18:41:13 by brandebr         ###   ########.fr        #
+#    Updated: 2023/09/25 14:03:29 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,3 +27,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $@ $^ $(NAME)
+
+clean:
+	/bin/rm -f *.o
+
+fclean: clean
+	/bin/rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all bonus clean fclean re
