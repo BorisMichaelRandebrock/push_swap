@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/09/26 11:07:24 by brandebr         ###   ########.fr       */
+/*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
+/*   Updated: 2023/09/26 13:56:11 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct	s_list
+int	main(int argc, char **argv)
 {
-	int	value;
-	int	index;
-	struct s_list	*next;
-}	t_list;
-
-int     main(int argc, char **argv);
-
-#endif
+	(void)argv;
+	if (argc < 2)
+		return (-1);
+	write(1, "Halleluja", 9); 
+	return (0);
+}
