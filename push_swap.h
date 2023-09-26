@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/09/26 11:07:24 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:17:28 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ typedef struct	s_list
 }	t_list;
 
 int     main(int argc, char **argv);
+char	**ft_split(char const *s, char c);
 
 #endif

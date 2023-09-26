@@ -1,0 +1,7 @@
+.Makefile.swp
+.ft_split.c.swp
+.main.c.swp
+.push_swap.h.swp
+*.o
+push_swap
+.gitignore.swp

@@ -6,13 +6,13 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/09/26 12:01:36 by brandebr         ###   ########.fr        #
+#    Updated: 2023/09/26 17:00:09 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = main.c
+SRC = main.c ft_split.c
 
 OBJ = $(SRC:%.c=%.o)
 
