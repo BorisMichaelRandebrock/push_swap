@@ -5,47 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/03 14:41:39 by brandebr         ###   ########.fr        #
+#    Created: 2023/06/21 16:28:59 by brandebr          #+#    #+#              #
+#    Updated: 2023/06/27 11:44:57 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = libftprintf.a
 
-SRC = main.c 
+SRC = ft_printf.c ft_itoa.c ft_printformat.c ft_putnumber.c\
+      ft_itoa.c ft_itoa_u.c ft_puthex.c 
 
-OBJ = $(SRC:%.c=%.o)
+OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-FLAGS = -Wall -Werror -Wextra -I. -I./libft -I./ft_printf
-
-LIBFT = ./libft/libft.a
-LIBFT_DIR = ./libft
-
-FT_PRINTF = ./ft_printf/libftprintf.a
-FT_PRINTF_DIR = ./ft_printf
+FLAGS = -Wall -Wextra -Werror -I.
 
 all: $(NAME)
 
-%.o: %.c push_swap.h
-	$(CC)  $(FLAGS) -c $< -o $@
+%.o: %.c ft_printf.h Makefile
+	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
-
-$(FT_PRINTF):
-	@make all -C $(FT_PRINTF_DIR)
-
-$(LIBFT): 
-	@make all -C $(LIBFT_DIR)
+$(NAME): $(OBJ)
+	ar rcs $@ $^ $(NAME)
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(OBJ) $(NAME)
+	 /bin/rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+

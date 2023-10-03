@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/03 14:31:55 by brandebr         ###   ########.fr       */
+/*   Created: 2023/05/22 10:13:45 by brandebr          #+#    #+#             */
+/*   Updated: 2023/06/13 18:00:15 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
-# include "./ft_printf/ft_printf.h"
-/*
-typedef struct	s_list
+void	ft_putchar_fd(char c, int fd)
 {
-	int	value;
-	int	index;
-	struct s_list	*next;
-}	t_list;
-*/
-int     main(int argc, char **argv);
-
-#endif
+	write(fd, &c, 1);
+}
+/*
+int	main(void)
+{
+	int	test;
+	
+	test = open("example.txt", O_WRONLY);
+	ft_putchar_fd('*', test);
+	return (0);
+}*/

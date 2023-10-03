@@ -1,30 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/03 14:31:55 by brandebr         ###   ########.fr       */
+/*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
+/*   Updated: 2023/10/03 12:55:24 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
-# include "./ft_printf/ft_printf.h"
-/*
-typedef struct	s_list
-{
-	int	value;
-	int	index;
-	struct s_list	*next;
-}	t_list;
-*/
-int     main(int argc, char **argv);
 
-#endif
