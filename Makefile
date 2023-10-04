@@ -6,13 +6,13 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/03 14:41:39 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/04 12:09:01 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = main.c 
+SRC = main.c utils.c 
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -39,6 +39,10 @@ $(FT_PRINTF):
 
 $(LIBFT): 
 	@make all -C $(LIBFT_DIR)
+	
+me_watch:
+	$(CC) -g3 $(FLAGS) $(LIBFT) $(FT_PRINTF) *.c -o debug
+#	@./debug
 
 clean:
 	/bin/rm -f *.o

@@ -5,3 +5,13 @@
 *.o
 push_swap
 .gitignore.swp
+.main.c.swm
+.main.c.swn
+.main.c.swo
+.push_swap.h.swo
+.utils.c.swo
+.utils.c.swp
+ARG=4 67 3 87 23
+checker_Mac
+debug
+debug.dSYM/
