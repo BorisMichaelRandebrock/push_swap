@@ -6,51 +6,40 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/04 19:17:30 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/05 14:10:16 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	si_exc(char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (argv[i])
-	{}
-
-	return (1);
-}
-
 int	check_numbers(char **argv)
 {
 	int	i;
 	int	j;
-	
+
 	i = 1;
 	j = 0;
 	while (argv[i])
 	{
 		while (argv[i][j])
 		{
-			if ((ft_isdigit(argv[i][j]) == 0) && !(argv[i][j] == '-'\
-					|| argv[i][j] == '+'))
+			if (argv[i][j] == '-' || argv[i][j] == '+')
+				j++;
+			while  (ft_isdigit(argv[i][j]) == 1)
+					j++;
+				if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
 				{
 					ft_printf("Error\n");
-					return (0);
+					exit(1);
 				}
-			j++;
 		}
-		j = 0;
 		i++;
+		j = 0;
 	}
 	return (1);
 }
 
-int	check_double(int *argv)
+int	check_double(char **argv)
 {
 	int	i;
 	int	j;
@@ -59,26 +48,17 @@ int	check_double(int *argv)
 	j = i + 1;
 	while (argv[i])
 	{
-		while (argv[j] && argv[i] != argv[j])
-			j++;
-		if (argv[i] == argv[j])
+		while (argv[j])
 		{
-			ft_printf("Error\n");
-			return (0);
-		}
-		i++;
-		j = i + 1;
-
-		/*while (argv[i])
-		{
-			if (argv[i] == argv[j])
+			if (strncmp(argv[i], argv[j], ft_strlen(argv[i])) == 0)
 			{
-				ft_printf("numbers duplicated 🤢");
-				return (0);
+				ft_printf("Error\n");
+				exit(2);
 			}
 			j++;
 		}
-		i++;*/
+		i++;
+		j = i + 1;
 	}
 	return (1);
 }
@@ -91,8 +71,7 @@ int	err_hunter(int argc, char **argv)
 
 	i = 0;
 	args = NULL;
-	check_numbers(argv);/*
-	*args = ft_atoi(*argv);
-i	check_double(args);i*/
+	check_numbers(argv);
+	check_double(argv);
 	return (0);
 }
