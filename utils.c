@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/05 14:10:16 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:33:29 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,28 @@ int	check_double(char **argv)
 	return (1);
 }
 
+void	outer_limits(char **argv)
+{
+	int	i;
+	long	min;
+	long	max;
+
+	i = 1;
+	min = (long)INT_MIN;
+	max = (long)INT_MAX;
+	while (argv[i])
+	{
+		if ((int)&argv[i] < 2147483648 || (int)&argv[i] > 2147483647)
+		{
+			ft_printf("Error\n");
+			exit (3);
+		}
+		i++;
+	}
+	ft_printf("%d\n", INT_MAX);
+   	ft_printf("%d", INT_MIN);
+}
+
 int	err_hunter(int argc, char **argv)
 {
 	int	*args;
@@ -73,5 +95,6 @@ int	err_hunter(int argc, char **argv)
 	args = NULL;
 	check_numbers(argv);
 	check_double(argv);
+	outer_limits(argv);
 	return (0);
 }
