@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/05 18:33:29 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:14:55 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,47 @@ int	check_double(char **argv)
 	return (1);
 }
 
-void	outer_limits(char **argv)
+long	ft_atol(char *argv)
 {
-	int	i;
-	long	min;
-	long	max;
-
-	i = 1;
-	min = (long)INT_MIN;
-	max = (long)INT_MAX;
+	int		i;
+	int		sign;
+	long long	num;
+	
+	i = 0;
+	sign = 1;
+	num = 0;
 	while (argv[i])
 	{
-		if ((int)&argv[i] < 2147483648 || (int)&argv[i] > 2147483647)
+		while (argv[i] >= 9 && argv[i] <= 13)
+			i++;
+		if (argv[i] == '-' || argv[i] == '+')
+		{
+			if (argv[i] == '-')
+				sign *= -1;
+			i++;
+		}
+		while (argv[i] >= '0' && argv[i] <= '9')
+		{
+			num = num * 10 + argv[i] - '0';
+			i++;
+		}
+	}
+	return (num * sign);
+}
+
+long long	*outer_limits(int argc, char **argv)
+{
+	int		i;
+	long long	*args;
+
+	i = 1;
+	args = malloc(sizeof(int) * (argc -1));
+	if (!args)
+		exit (4);
+	while (argv[i])
+	{
+		args[i - 1] = ft_atol(argv[i]);
+		if (args[i - 1] < INT_MIN || args[i - 1] > INT_MAX)
 		{
 			ft_printf("Error\n");
 			exit (3);
@@ -83,6 +112,7 @@ void	outer_limits(char **argv)
 	}
 	ft_printf("%d\n", INT_MAX);
    	ft_printf("%d", INT_MIN);
+	return (args);
 }
 
 int	err_hunter(int argc, char **argv)
@@ -95,6 +125,6 @@ int	err_hunter(int argc, char **argv)
 	args = NULL;
 	check_numbers(argv);
 	check_double(argv);
-	outer_limits(argv);
+	outer_limits(argc, argv);
 	return (0);
 }
