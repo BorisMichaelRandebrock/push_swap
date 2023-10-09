@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:14 by brandebr          #+#    #+#             */
-/*   Updated: 2023/05/25 14:41:32 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:21:16 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,16 @@
 # include <string.h>
 # include <fcntl.h>
 
+typedef struct s_stack
+{
+	int	index;
+	int	value;
+}	t_stack;
+
 typedef struct s_list
 {
 	void			*content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 
