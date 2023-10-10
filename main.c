@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/04 17:12:43 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:11:35 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,21 @@ int	main(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	
+	char	**args;
+	int	*arg;
+
 	i = 1;
 	j = 0;
-	if (argc == 1  || (argc == 2 && !argv[1][0]))
+	args = NULL;
+	arg = NULL;
+	if (argc == 1)
 		return (1);
-	err_hunter(argc, argv);
+	if (argc == 2)
+	{
+		args = ft_split(argv[1], ' ');
+		arg = err_hunter(argc, args);
+	}
+	else 
+		arg = err_hunter(argc,  argv);
 	return (0);
 }

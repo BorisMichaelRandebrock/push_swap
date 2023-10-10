@@ -6,7 +6,7 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/04 12:09:01 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/10 19:18:19 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ = $(SRC:%.c=%.o)
 
 CC = cc
 
-FLAGS = -Wall -Werror -Wextra -I. -I./libft -I./ft_printf
+FLAGS = -Wall -Werror -Wextra -g -I. -I./libft -I./ft_printf
 
 LIBFT = ./libft/libft.a
 LIBFT_DIR = ./libft
@@ -42,7 +42,7 @@ $(LIBFT):
 	
 me_watch:
 	$(CC) -g3 $(FLAGS) $(LIBFT) $(FT_PRINTF) *.c -o debug
-#	@./debug
+	@lldb ./debug 1 2 3
 
 clean:
 	/bin/rm -f *.o

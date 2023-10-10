@@ -6,13 +6,13 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/06 13:14:55 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:02:25 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_numbers(char **argv)
+void	check_numbers(char **argv)
 {
 	int	i;
 	int	j;
@@ -36,10 +36,9 @@ int	check_numbers(char **argv)
 		i++;
 		j = 0;
 	}
-	return (1);
 }
 
-int	check_double(char **argv)
+void	check_double(char **argv)
 {
 	int	i;
 	int	j;
@@ -50,7 +49,7 @@ int	check_double(char **argv)
 	{
 		while (argv[j])
 		{
-			if (strncmp(argv[i], argv[j], ft_strlen(argv[i])) == 0)
+			if (ft_strncmp(argv[i], argv[j], ft_strlen(argv[i])) == 0)
 			{
 				ft_printf("Error\n");
 				exit(2);
@@ -60,7 +59,6 @@ int	check_double(char **argv)
 		i++;
 		j = i + 1;
 	}
-	return (1);
 }
 
 long	ft_atol(char *argv)
@@ -115,16 +113,15 @@ long long	*outer_limits(int argc, char **argv)
 	return (args);
 }
 
-int	err_hunter(int argc, char **argv)
+int	*err_hunter(int argc, char **argv)
 {
 	int	*args;
 	int	i;
-	(void)argc;
 
 	i = 0;
 	args = NULL;
 	check_numbers(argv);
 	check_double(argv);
-	outer_limits(argc, argv);
-	return (0);
+	args = (int *)outer_limits(argc, argv);
+	return (args);
 }
