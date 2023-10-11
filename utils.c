@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/10 19:02:25 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:54:35 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,19 @@ void	check_numbers(char **argv)
 	}
 }
 
-void	check_double(char **argv)
+void	check_double(int *argv)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = i + 1;
 	while (argv[i])
 	{
 		while (argv[j])
 		{
-			if (ft_strncmp(argv[i], argv[j], ft_strlen(argv[i])) == 0)
+
+			if (argv[i] == argv[j])
 			{
 				ft_printf("Error\n");
 				exit(2);
@@ -121,7 +122,7 @@ int	*err_hunter(int argc, char **argv)
 	i = 0;
 	args = NULL;
 	check_numbers(argv);
-	check_double(argv);
 	args = (int *)outer_limits(argc, argv);
+	check_double(args);
 	return (args);
 }
