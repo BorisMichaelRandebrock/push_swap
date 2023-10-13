@@ -6,7 +6,7 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/12 15:49:19 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/13 11:20:34 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ FT_PRINTF_DIR = ./ft_printf
 
 all: $(NAME)
 
-%.o: %.c push_swap.h
+%.o: %.c push_swap.h ./libft/libft.h
 	$(CC)  $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
@@ -38,7 +38,7 @@ $(FT_PRINTF):
 	@make all -C $(FT_PRINTF_DIR)
 
 $(LIBFT): 
-	@make all -C $(LIBFT_DIR)
+	@make bonus -C $(LIBFT_DIR)
 	
 me_watch:
 	$(CC) -g3 $(FLAGS) $(LIBFT) $(FT_PRINTF) *.c -o debug
@@ -46,9 +46,11 @@ me_watch:
 
 clean:
 	/bin/rm -f *.o
+	make clean -C $(LIBFT_DIR) 
 
 fclean: clean
 	/bin/rm -f $(OBJ) $(NAME)
+	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

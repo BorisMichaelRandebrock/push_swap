@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/11 12:54:35 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:11:33 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,33 @@ void	check_numbers(char **argv)
 	}
 }
 
-void	check_double(int *argv)
+void	check_double(char  **argv)
 {
 	int	i;
 	int	j;
+	int	k;
 
-	i = 0;
+	i = 1;
 	j = i + 1;
+	k=0;
 	while (argv[i])
 	{
+		int temp = ft_atoi(argv[i]);
+		j =0;
+		k=0;
 		while (argv[j])
 		{
-
-			if (argv[i] == argv[j])
-			{
-				ft_printf("Error\n");
-				exit(2);
-			}
+			if (temp == ft_atoi(argv[j]))
+					k++;
 			j++;
 		}
-		i++;
-		j = i + 1;
+		if (k > 1)
+		{
+				ft_printf("Error\n");
+				exit(2);
+
+		}
+	i++;	
 	}
 }
 
@@ -95,22 +101,24 @@ long long	*outer_limits(int argc, char **argv)
 	int		i;
 	long long	*args;
 
-	i = 1;
-	args = malloc(sizeof(int) * (argc -1));
+	i = 0;
+	args = malloc(sizeof(long long) * (argc -1));
 	if (!args)
 		exit (4);
 	while (argv[i])
 	{
-		args[i - 1] = ft_atol(argv[i]);
-		if (args[i - 1] < INT_MIN || args[i - 1] > INT_MAX)
+		//args[i] = ft_atol(argv[i]);
+		//printf("-%lld-\n", args[i]);
+	//	ft_printf("%i\n", ft_atol(argv[i]));
+		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
 		{
 			ft_printf("Error\n");
 			exit (3);
 		}
 		i++;
 	}
-	ft_printf("%d\n", INT_MAX);
-   	ft_printf("%d", INT_MIN);
+
+
 	return (args);
 }
 
@@ -118,11 +126,11 @@ int	*err_hunter(int argc, char **argv)
 {
 	int	*args;
 	int	i;
-
+	(void)argc;
 	i = 0;
 	args = NULL;
 	check_numbers(argv);
 	args = (int *)outer_limits(argc, argv);
-	check_double(args);
+	check_double(argv);
 	return (args);
 }

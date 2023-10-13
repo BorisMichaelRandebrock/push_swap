@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/11 11:28:02 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:04:09 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	j = 0;
 	args = NULL;
 	arg = NULL;
-	if (argc == 1)
+	if (argc == 1 )
 		return (1);
 	if (argc == 2)
 	{
@@ -31,6 +31,6 @@ int	main(int argc, char **argv)
 		arg = err_hunter(argc, args);
 	}
 	else 
-		arg = err_hunter(argc,  argv);
+		arg = err_hunter(argc,  ++argv);
 	return (0);
 }
