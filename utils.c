@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/13 17:11:33 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:39:48 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	check_double(char  **argv)
 
 	i = 1;
 	j = i + 1;
-	k=0;
+	k = 0;
 	while (argv[i])
 	{
 		int temp = ft_atoi(argv[i]);
-		j =0;
-		k=0;
+		j = 0;
+		k = 0;
 		while (argv[j])
 		{
 			if (temp == ft_atoi(argv[j]))
@@ -62,7 +62,6 @@ void	check_double(char  **argv)
 		{
 				ft_printf("Error\n");
 				exit(2);
-
 		}
 	i++;	
 	}
@@ -96,29 +95,26 @@ long	ft_atol(char *argv)
 	return (num * sign);
 }
 
-long long	*outer_limits(int argc, char **argv)
+int	*outer_limits(int argc, char **argv)
 {
 	int		i;
-	long long	*args;
+	int	*args;
 
 	i = 0;
-	args = malloc(sizeof(long long) * (argc -1));
+	args = malloc(sizeof(int) * (argc -1));
 	if (!args)
 		exit (4);
 	while (argv[i])
 	{
-		//args[i] = ft_atol(argv[i]);
-		//printf("-%lld-\n", args[i]);
-	//	ft_printf("%i\n", ft_atol(argv[i]));
-		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
+		if (ft_atol(argv[i]) < INT_MIN || ft_atol(argv[i]) > INT_MAX)
 		{
 			ft_printf("Error\n");
 			exit (3);
 		}
+
+		args[i] = (int)ft_atol(argv[i]);
 		i++;
 	}
-
-
 	return (args);
 }
 
@@ -126,11 +122,18 @@ int	*err_hunter(int argc, char **argv)
 {
 	int	*args;
 	int	i;
-	(void)argc;
+	
 	i = 0;
-	args = NULL;
+	args = malloc(sizeof(int) * (argc - 1));
+	if (!args)
+		exit(4);
 	check_numbers(argv);
-	args = (int *)outer_limits(argc, argv);
 	check_double(argv);
+	args = outer_limits(argc, argv);
+/*	while (args[i])
+	{
+		ft_printf("%i\n", args[i]);
+		i++;
+	}*/
 	return (args);
 }

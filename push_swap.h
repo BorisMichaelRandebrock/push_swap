@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/12 16:19:24 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:59:10 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ typedef struct	s_list
 */
 int     main(int argc, char **argv);
 int	*err_hunter(int argc, char **argv);
-void	stack_ini(t_list **a, int args);
-
+t_list	*stack_init(int *args);
+long	ft_atol(char *argv);
 #endif
