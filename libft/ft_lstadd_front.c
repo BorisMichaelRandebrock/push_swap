@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:57:40 by brandebr          #+#    #+#             */
-/*   Updated: 2023/06/14 13:05:25 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:52:37 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new -> next = *lst;
+//	new -> next = *lst;
 	*lst = new;
 }
 /*

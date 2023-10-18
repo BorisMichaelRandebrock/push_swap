@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 17:19:13 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/09 19:36:29 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:04:27 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
+	t_number	*tmp;
 	int	len;
 
+	tmp = lst->first;
 	len = 0;
-	while (lst)
+	while (tmp)
 	{
 		len++;
-		lst = lst -> next;
+		tmp = tmp -> next;
 	}
 	return (len);
 }

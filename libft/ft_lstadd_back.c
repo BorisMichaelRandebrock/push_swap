@@ -6,12 +6,12 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 19:04:13 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/12 15:53:51 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:32:33 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
@@ -24,7 +24,24 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last -> index = -1;
 		last -> next = new;
 	}
+}*/
+
+void ft_lstadd_back(t_number **lst, t_number *new)
+{
+    t_number *last;
+
+    if (*lst == NULL)
+        *lst = new;
+    else
+    {
+        last = *lst;
+        while (last->next != NULL)
+            last = last->next;
+        last->next = new;
+        new->prev = last;
+    }
 }
+
 /* 
 int	main(void)
 {

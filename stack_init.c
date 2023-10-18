@@ -6,26 +6,59 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 14:59:41 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:10:15 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" 
+/*
+   t_list	*stack_init(int *args)
+   {
+   int		i;
+   t_number	*new;
+   t_list		*stack_a;
 
-t_list	*stack_init(int *args)
+   i = 0;
+   new = NULL;
+   stack_a = NULL;
+   while (args[i] != '\0')
+   {
+   new->value = args[i];
+   ft_lstadd_back(&stack_a, new);
+   printf("nodo: %i\n", new->value);
+   i++;
+   }
+   return (stack_a);
+   }*/
+
+#include "push_swap.h"
+
+t_list *stack_init(int *args, int argc)
 {
-	int	i;
-	t_list	*new;
-	t_list	*stack_a;
-	
+	int i;
+	t_number *new;
+	t_list *stack_a;
+
 	i = 0;
-	new = NULL;
-	stack_a = NULL;
-	while (args[i] != '\0')
-	{
-		new = ft_lstnew(&args[i]);
-		ft_lstadd_back(&stack_a, new);
+	stack_a = (t_list *)malloc(sizeof(t_list));
+	stack_a->first = NULL;
+	while (i < argc - 1)
+	{	
+		new = (t_number *)malloc(sizeof(t_number));
+		new->value = args[i];
+		new->next = NULL;
+		new->prev = NULL;
+		if (stack_a->first == NULL)
+		{
+			stack_a->first = new;
+		}
+		else
+		{
+			ft_lstadd_back(&(stack_a->first), new);
+		}
+		printf("nodo: %i\n", new->value);
 		i++;
 	}
 	return (stack_a);
 }
+

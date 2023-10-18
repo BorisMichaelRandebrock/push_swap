@@ -15,3 +15,5 @@ ARG=4 67 3 87 23
 checker_Mac
 debug
 debug.dSYM/
+.stack_init.c.swp
+stack_init.c.swp
