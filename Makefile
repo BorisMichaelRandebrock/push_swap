@@ -6,7 +6,7 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/18 13:13:55 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/18 14:54:37 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(LIBFT):
 	
 me_watch:
 	$(CC) -g3 $(FLAGS) $(LIBFT) $(FT_PRINTF) *.c -o debug
-	@lldb ./debug 1 2 3
+	@lldb ./debug 1 2 3  
 
 clean:
 	/bin/rm -f *.o

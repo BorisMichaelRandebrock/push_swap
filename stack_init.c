@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 12:49:40 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:59:41 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*stack_init(int *args)
 	i = 0;
 	new = NULL;
 	stack_a = NULL;
-	while (args)
+	while (args[i] != '\0')
 	{
 		new = ft_lstnew(&args[i]);
 		ft_lstadd_back(&stack_a, new);

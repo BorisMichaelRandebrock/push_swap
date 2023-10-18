@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 13:56:53 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:04:08 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(int argc, char **argv)
 		ft_printf("%i \n", arg[i]);
 		i++;
 	}*/
-	stack_init(arg);
+	stack_a = stack_init(arg);
+	ft_printf("%i",ft_lstsize(stack_a));
 	return (0);
 }
