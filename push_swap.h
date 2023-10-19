@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 20:10:30 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:38:45 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,8 @@ int     main(int argc, char **argv);
 int	*err_hunter(int argc, char **argv);
 t_list	*stack_init(int *args, int argc);
 long	ft_atol(char *argv);
+void	print_stack(t_list *lst);
+t_list	*to_split(char **argv);
+t_list	*no_split(int argc, char **argv);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 17:04:04 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:39:43 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,24 @@ int	main(int argc, char **argv)
 	if (argc == 1 )
 		return (1);
 	if (argc == 2)
-	{
+		stack_a = to_split(argv);
+/*	{
 		args = ft_split(argv[1], ' ');
 		while (args[j])
 			j++;
 		arg = err_hunter(j + 1, args);
 		stack_a = stack_init(arg, j + 1);
 	}
-	else 
+*/	else
+		stack_a = no_split(argc, ++argv);
+/*
 	{
 		arg = err_hunter(argc,  ++argv);
 		stack_a = stack_init(arg, argc);
 		free(args);
 	}
-	ft_printf("amount of nodes: %i \n",ft_lstsize(stack_a));
-	i = 0;
-	/*	while (stack_a->content)
-		{
-		ft_printf("%i\n", stack_a->first->value);
-		stack_a = stack_a->first->next;
-		}
-		*/
-//	return (0);
-	t_number *current = stack_a->first;
-	while (current->next)
-	{
-		printf("%i\n", current->value);
-		current = current->next;
-	}
-	printf("%i\n", current->value);
+*/	i = 0;
+	print_stack(stack_a);
 	free(arg);
 	return (0);
 }

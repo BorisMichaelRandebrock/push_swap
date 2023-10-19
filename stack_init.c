@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 15:31:12 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:32:44 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_list *stack_init(int *args, int argc)
 	stack_a = (t_list *)malloc(sizeof(t_list));
 	stack_a->first = NULL;
 	while (i < argc - 1)
-	{	
+	{
 		new = (t_number *)malloc(sizeof(t_number));
 		new->value = args[i];
 		new->next = NULL;
