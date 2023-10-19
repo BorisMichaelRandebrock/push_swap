@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 13:10:36 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:04:04 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	char	**args;
 	int	*arg;
 	t_list	*stack_a;
-//	t_list	*stack_b;
+	//	t_list	*stack_b;
 
 	i = 1;
 	j = 0;
@@ -41,13 +41,24 @@ int	main(int argc, char **argv)
 	{
 		arg = err_hunter(argc,  ++argv);
 		stack_a = stack_init(arg, argc);
+		free(args);
 	}
 	ft_printf("amount of nodes: %i \n",ft_lstsize(stack_a));
 	i = 0;
-/*	while (stack_a)
- 	{
-		ft_printf("%i\n", stack_a->value);
-		stack_a = stack_a->next;
-    	}
-*/	return (0);
+	/*	while (stack_a->content)
+		{
+		ft_printf("%i\n", stack_a->first->value);
+		stack_a = stack_a->first->next;
+		}
+		*/
+//	return (0);
+	t_number *current = stack_a->first;
+	while (current->next)
+	{
+		printf("%i\n", current->value);
+		current = current->next;
+	}
+	printf("%i\n", current->value);
+	free(arg);
+	return (0);
 }

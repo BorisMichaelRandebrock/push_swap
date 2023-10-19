@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 13:09:28 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 15:38:29 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,10 @@ int	*err_hunter(int argc, char **argv)
 	check_numbers(argv);
 	check_double(argv);
 	args = outer_limits(argc, argv);
-	while (args[i])
+/*	while (args[i])
 	{
 		ft_printf("%i\n", args[i]);
 		i++;
 	}
-	return (args);
+*/	return (args);
 }
