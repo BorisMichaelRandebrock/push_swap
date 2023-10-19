@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 20:10:15 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:03:41 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
    return (stack_a);
    }*/
 
-#include "push_swap.h"
 
 t_list *stack_init(int *args, int argc)
 {
@@ -56,7 +55,7 @@ t_list *stack_init(int *args, int argc)
 		{
 			ft_lstadd_back(&(stack_a->first), new);
 		}
-		printf("nodo: %i\n", new->value);
+		printf("node: %i\n", new->value);
 		i++;
 	}
 	return (stack_a);

@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/18 18:38:48 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:09:28 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	check_numbers(char **argv)
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 				j++;
 			while  (ft_isdigit(argv[i][j]) == 1)
-					j++;
-				if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
-				{
-					ft_printf("Error\n");
-					exit(1);
-				}
+				j++;
+			if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
+			{
+				ft_printf("Error\n");
+				exit(1);
+			}
 		}
 		i++;
 		j = 0;
@@ -55,15 +55,15 @@ void	check_double(char  **argv)
 		while (argv[j])
 		{
 			if (temp == ft_atoi(argv[j]))
-					k++;
+				k++;
 			j++;
 		}
 		if (k > 1)
 		{
-				ft_printf("Error\n");
-				exit(2);
+			ft_printf("Error\n");
+			exit(2);
 		}
-	i++;	
+		i++;	
 	}
 }
 
@@ -72,7 +72,7 @@ long	ft_atol(char *argv)
 	int		i;
 	int		sign;
 	long long	num;
-	
+
 	i = 0;
 	sign = 1;
 	num = 0;
@@ -101,7 +101,7 @@ int	*outer_limits(int argc, char **argv)
 	int	*args;
 
 	i = 0;
-	args = malloc(sizeof(int) * (argc -1));
+	args = malloc(sizeof(int) * (argc));
 	if (!args)
 		exit (4);
 	while (argv[i])
@@ -115,6 +115,7 @@ int	*outer_limits(int argc, char **argv)
 		args[i] = (int)ft_atol(argv[i]);
 		i++;
 	}
+	args[i] = '\0';
 	return (args);
 }
 
@@ -122,18 +123,18 @@ int	*err_hunter(int argc, char **argv)
 {
 	int	*args;
 	int	i;
-	
+
 	i = 0;
-	args = malloc(sizeof(int) * (argc - 1));
+	args = malloc(sizeof(int) * (argc));
 	if (!args)
 		exit(4);
 	check_numbers(argv);
 	check_double(argv);
 	args = outer_limits(argc, argv);
-/*	while (args[i])
+	while (args[i])
 	{
 		ft_printf("%i\n", args[i]);
 		i++;
-	}*/
+	}
 	return (args);
 }
