@@ -6,12 +6,17 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 15:38:29 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:54:45 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	print_error_exit(void)
+{
+	ft_printf("Error\n");
+	exit(1);
+}
 void	check_numbers(char **argv)
 {
 	int	i;
@@ -23,20 +28,29 @@ void	check_numbers(char **argv)
 	{
 		while (argv[i][j])
 		{
-			if (argv[i][j] == '-' || argv[i][j] == '+')
+			if ((argv[i][j] == '-' || argv[i][j] == '+') && \
+					argv[i][j + 1] == '\0')
+				print_error_exit();
+/*			{
+				ft_printf("Error\n");
+				exit(1);
+			}
+*/			if (argv[i][j] == '-' || argv[i][j] == '+')
 				j++;
 			while  (ft_isdigit(argv[i][j]) == 1)
 				j++;
 			if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
-			{
+				print_error_exit();
+/*			{
 				ft_printf("Error\n");
 				exit(1);
 			}
-		}
+*/		}
 		i++;
 		j = 0;
 	}
 }
+
 
 void	check_double(char  **argv)
 {
