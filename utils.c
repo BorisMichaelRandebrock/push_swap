@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/20 10:54:45 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:24:20 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,21 @@ void	check_numbers(char **argv)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (argv[i])
 	{
+		if ((argv[i][j] == '-' || argv[i][j] == '+') && !argv[i][j + 1])
+			print_error_exit();
+		if (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
 		while (argv[i][j])
 		{
-			if ((argv[i][j] == '-' || argv[i][j] == '+') && \
-					argv[i][j + 1] == '\0')
-				print_error_exit();
-/*			{
-				ft_printf("Error\n");
-				exit(1);
-			}
-*/			if (argv[i][j] == '-' || argv[i][j] == '+')
-				j++;
 			while  (ft_isdigit(argv[i][j]) == 1)
 				j++;
 			if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
 				print_error_exit();
-/*			{
-				ft_printf("Error\n");
-				exit(1);
-			}
-*/		}
+		}
 		i++;
 		j = 0;
 	}
@@ -145,10 +136,10 @@ int	*err_hunter(int argc, char **argv)
 	check_numbers(argv);
 	check_double(argv);
 	args = outer_limits(argc, argv);
-/*	while (args[i])
-	{
+	/*	while (args[i])
+		{
 		ft_printf("%i\n", args[i]);
 		i++;
-	}
-*/	return (args);
+		}
+		*/	return (args);
 }
