@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 18:32:44 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:54:11 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_list *stack_init(int *args, int argc)
 
 	i = 0;
 	stack_a = (t_list *)malloc(sizeof(t_list));
+	stack_a->len = 0;
 	stack_a->first = NULL;
 	while (i < argc - 1)
 	{
@@ -57,7 +58,17 @@ t_list *stack_init(int *args, int argc)
 		}
 		//printf("node: %i\n", new->value);
 		i++;
+		stack_a->len++;
 	}
 	return (stack_a);
 }
 
+t_list *stack_b_init(void)
+{
+	t_list *stack_b;
+
+	stack_b = (t_list *)malloc(sizeof(t_list));
+	stack_b->len = 0;
+	stack_b->first = NULL;
+	return (stack_b);
+}

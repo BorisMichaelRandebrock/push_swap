@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:14 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 10:56:09 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:43:38 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_list
 	t_number		*first;
 	void			*content;
 	int			index;
+	int			len;
 }	t_list;
 
 int		ft_isalpha(int c);
