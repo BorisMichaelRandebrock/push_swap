@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/20 10:43:53 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:36:03 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	print_stack(t_list *lst);
 t_list	*to_split(char **argv);
 t_list	*no_split(int argc, char **argv);
 void	check_numbers(char **argv);
+void	swap(t_list *stack);
 
 #endif

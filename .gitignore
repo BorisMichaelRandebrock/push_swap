@@ -17,3 +17,4 @@ debug
 debug.dSYM/
 .stack_init.c.swp
 stack_init.c.swp
+*.swp
