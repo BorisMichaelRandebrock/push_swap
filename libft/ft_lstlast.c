@@ -6,24 +6,26 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:05:27 by brandebr          #+#    #+#             */
-/*   Updated: 2023/06/14 14:40:28 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:34:43 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_number	*ft_lstlast(t_list *lst)
 {
-	int	i;
+	int		i;
+	t_number	*tmp;
 
 	i = 0;
 	if (!lst)
 		return (NULL);
-	while (lst -> next)
+	tmp = lst->first;
+	while (tmp->next)
 	{
-		lst = lst -> next;
+		tmp = tmp-> next;
 	}
-	return (lst);
+	return (tmp);
 }
 /*
 int	main(void)

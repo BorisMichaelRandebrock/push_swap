@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:53 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/23 20:00:09 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:58:52 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,17 @@ void	push(t_list *src, t_list *dst)
 
 	i = 0;
 	tmp = src->first;
-	printf("0\n");
 	src->first = src->first->next;
-	printf("00\n");
 	src->first->prev = NULL;
-	printf("000\n");
 	printf("size = %i\n", ft_lstsize(dst));
 	if (dst->len == 0)
 	{
-		printf("Entramos en b es NULL\n");
 		dst->first = tmp;
 		dst->first->prev = NULL;
 		dst->first->next = NULL;
 	}
 	else
 	{
-		printf("Entramos en el else\n");
 		tmp2 = dst->first;
 		dst->first = tmp;
 		tmp2->prev = tmp;
@@ -58,4 +53,39 @@ void	push(t_list *src, t_list *dst)
 	}
 	dst->len++;
 	src->len--;
+}
+
+void	rotate(t_list *st)
+{
+	t_number	*tmp;
+	t_number	*tmp2;
+	t_number	*tmp3;
+
+	tmp = st->first;
+	tmp3 = st->first->next;
+	tmp3->prev = NULL;
+	tmp2 = ft_lstlast(st);
+	tmp2->next = tmp; 
+	tmp->prev = tmp2;
+	tmp->next = NULL;
+	st->first = tmp3;
+}
+void delete(void *content)
+{
+	content = NULL;
+}
+
+void	reverse_rotate(t_list *st)
+{
+	t_number	*tmp1;
+	t_number	*tmp3;
+
+	tmp3 = ft_lstlast(st);
+	tmp1 = st->first;
+	st->first = tmp3;
+	st->first->next = tmp1;
+	tmp1->prev = st->first;
+	tmp3 = tmp3->prev;
+	st->first->prev = NULL;
+	tmp3->next = NULL;
 }
