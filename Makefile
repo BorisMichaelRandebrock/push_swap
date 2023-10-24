@@ -6,13 +6,13 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/23 15:36:55 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/24 19:20:58 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = main.c utils.c stack_init.c utilities.c fst_moves.c 
+SRC = main.c utils.c stack_init.c utilities.c fst_moves.c push_n_swap.c 
 
 OBJ = $(SRC:%.c=%.o)
 
