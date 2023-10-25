@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/24 19:20:13 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:29:41 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,11 @@ void	sb(t_list *st_b);
 void	ss(t_list *st_a, t_list *st_b);
 void	pa(t_list *st_b, t_list *st_a);
 void	pb(t_list *st_a, t_list *st_b);
+void	ra(t_list *stack_a);
+void	rb(t_list *stack_b);
+void	rr(t_list *stack_a, t_list *stack_b);
+void	rra(t_list *stack_a);
+void	rrb(t_list *stack_b);
+void	rrr(t_list *stack_a, t_list *stack_b);
 
 #endif
