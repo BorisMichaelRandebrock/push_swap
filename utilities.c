@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:24:21 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/19 18:39:56 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:17:40 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 void	print_stack(t_list *lst)
 {
+	int	i;
+
+	i = 1;
 	t_number *current = lst->first;
 	while (current->next)
 	{
 		printf("%i\n", current->value);
 		current = current->next;
+		i++;
 	}
 	printf("%i\n", current->value);
-	ft_printf("amount of nodes: %i \n",ft_lstsize(lst));
+	ft_printf("amount of nodes: %i \n", i);
 }
 
 t_list	*to_split(char **argv)

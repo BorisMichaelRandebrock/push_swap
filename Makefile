@@ -6,14 +6,14 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/25 11:08:49 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/25 13:07:42 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = main.c utils.c stack_init.c utilities.c fst_moves.c push_n_swap.c\
-      rotates.c 
+      rotates.c magic.c
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -43,7 +43,7 @@ $(LIBFT):
 	
 me_watch:
 	$(CC) -g3 $(FLAGS) $(LIBFT) $(FT_PRINTF) *.c -o debug
-	@lldb ./debug 1 2 3  
+	@lldb ./debug 1 24 3  
 
 clean:
 	/bin/rm -f *.o
