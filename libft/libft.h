@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:14 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/24 15:34:25 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:14:17 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list
 {
 	t_number		*first;
 	void			*content;
-	int			index;
+//	int			index;
 	int			len;
 }	t_list;
 

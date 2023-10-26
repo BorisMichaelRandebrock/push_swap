@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:53 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/26 13:46:41 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:29:56 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	swap(t_list *st)
 {
 	int tmp;
+	int tmp2;
 
 	tmp = st->first->value;
+	tmp2 = st->first->index;
 	st->first->value = st->first->next->value;
+	st->first->index = st->first->next->index;
 	st->first->next->value = tmp;
+	st->first->next->index = tmp2;
 }
 /*
 void	swap(t_list *stack)
@@ -70,8 +74,8 @@ void	push(t_list *src, t_list *dst)
 	i = 0;
 	tmp = src->first;
 	src->first = src->first->next;
-	src->first->prev = NULL;
-	printf("size = %i\n", ft_lstsize(dst));
+	if (src->first)
+		src->first->prev = NULL;
 	if (dst->len == 0)
 	{
 		dst->first = tmp;
