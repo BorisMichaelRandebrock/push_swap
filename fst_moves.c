@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:53 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/26 18:29:56 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:44:22 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ void	swap(t_list *st)
 /*
 void	swap(t_list *stack)
 {
-	t_number	*temp;
+	t_number	*tmp;
 	t_number	*tmp2;
 
-	temp = stack->first;
-	temp->next = temp->next->next
+	tmp = stack->first;
 	tmp2 = stack->first->next;
+	tmp->prev = tmp2;
+	tmp->next = tmp->next->next;
 	tmp2->prev = NULL; //temp->prev;
-	temp->prev = tmp2;
-	temp2->next = temp;
-	temp->next = temp->next->next;
+	tmp2->next = tmp;
 	stack->first = tmp2;
-	stack->first->next = temp;
+	stack->first->next = tmp;
 }*/
 /*
 void	swap(t_list *stack)

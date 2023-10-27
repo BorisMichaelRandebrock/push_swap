@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:25:34 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/26 18:38:55 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:40:13 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,24 +79,30 @@ int	is_sorted(t_list *st_a, t_list *st_b)
 
 void	sort_three(t_list *st_a)
 {
-	t_number	*number;
+	t_number	*n;
 
-	number = st_a->first;
-	if (number->value <  number->next->value && number->next->value > \
-			number->next->next->value)
+	n = st_a->first;
+	if (n->value <  n->next->value && n->next->value > \
+			n->next->next->value && n->value < n->next->next->value)
 	{
 		rra(st_a);
 		sa(st_a);
 	}
-	else if (number->value >  number->next->value && number->next->value > \
-			number->next->next->value)
+	else if (n->value > n->next->value && n->next->next->value > n->next->value && n->value > n->next->next->value)
+		ra(st_a);
+	else if (n->value <  n->next->value && n->next->value >\
+			n->next->next->value)
+		rra(st_a);
+	else if (n->value >  n->next->value && n->next->value > \
+			n->next->next->value)
 	{
 		sa(st_a);
 		rra(st_a); 
 	}
-	else if (number->value > number->next->value && number->next->value < \
-			number->next->next->value)
+	else if (n->value > n->next->value && n->next->value < \
+			n->next->next->value)
 		sa(st_a);
+
 }
 
 void	sort_four(t_list *st_a, t_list *st_b)
