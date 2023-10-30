@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:25:34 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 14:28:29 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:59:47 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	find_smallest(t_list *st)
 		i++;
 		tmp = tmp->next;
 	}
-//	printf("smallest is in position: %i\n", rtn);
+	//	printf("smallest is in position: %i\n", rtn);
 	return (rtn);
 }
 
@@ -103,7 +103,7 @@ void	sort_three(t_list *st_a)
 	else if (n->value > n->next->value && n->next->value < \
 			n->next->next->value)
 		sa(st_a);
-//	free(st_a);
+	//	free(st_a);
 }
 
 void	sort_four(t_list *st_a, t_list *st_b)
@@ -124,6 +124,7 @@ void	sort_four(t_list *st_a, t_list *st_b)
 void	fabulous_five(t_list *st_a, t_list *st_b)
 {
 	int	n;
+
 	n = find_smallest(st_a);
 	while (n)
 	{
@@ -133,6 +134,31 @@ void	fabulous_five(t_list *st_a, t_list *st_b)
 	pb(st_a, st_b);
 	sort_four(st_a, st_b);
 	pa(st_b, st_a);
+}
+
+void    sort_until_100(t_list *st_a, t_list *st_b)
+{
+	int     i;
+	int	n;
+
+	i = st_a->len;
+	while (i > 5)
+	{
+
+		n = find_smallest(st_a);
+		while (n)
+		{
+			ra(st_a);
+			n--;
+		}
+//		pb(st_a, st_b);
+		// find_smallest(st_a);
+		pb(st_a, st_b);
+		i--;
+	}
+	fabulous_five(st_a, st_b);
+	while (st_b->len)
+		pa(st_b, st_a);
 }
 
 void	sort_numbers(t_list *st_a, t_list *st_b)
@@ -148,8 +174,10 @@ void	sort_numbers(t_list *st_a, t_list *st_b)
 		sort_four(st_a, st_b);
 	if (st_a->len == 5)
 		fabulous_five(st_a, st_b);
-	print_stack(st_a);
+	if (st_a->len > 5)
+		sort_until_100(st_a, st_b);
+	//	print_stack(st_a);
 	is_sorted(st_a, st_b);
-//	free(st_a);
+	//	free(st_a);
 	exit(0);
 }

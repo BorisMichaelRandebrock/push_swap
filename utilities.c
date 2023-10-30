@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:24:21 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 14:26:57 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:57:50 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ t_list	*to_split(char **argv)
 	arg = NULL;
 	stack_a = NULL;
 	args = ft_split(argv[1], ' ');
+/*	if (*args == "")
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}*/
 	while (args[j])
 		j++;
 //	(void) st_b;
