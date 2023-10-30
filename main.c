@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 19:57:06 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:01:02 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = stack_b_init();
-	if (!ft_strlen(argv[1]))
+	if (argc == 1 )
 	{
 		write(2, "Error\n", 6);
 		return (-1);
 	}
-	if (argc == 1 )
+	if (!ft_strlen(argv[1]))
 	{
 		write(2, "Error\n", 6);
 		return (-1);
