@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/23 12:24:20 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:14:00 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,10 @@ int	*err_hunter(int argc, char **argv)
 	int	i;
 
 	i = 0;
-	args = malloc(sizeof(int) * (argc));
-	if (!args)
-		exit(4);
+	args = NULL;
+	//args = malloc(sizeof(int) * (argc));
+//	if (!args)
+//		exit(4);
 	check_numbers(argv);
 	check_double(argv);
 	args = outer_limits(argc, argv);
@@ -141,5 +142,6 @@ int	*err_hunter(int argc, char **argv)
 		ft_printf("%i\n", args[i]);
 		i++;
 		}
-		*/	return (args);
+		*/	
+	return (args);
 }

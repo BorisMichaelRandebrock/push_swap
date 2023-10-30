@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:25:34 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/27 11:40:13 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:28:29 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	find_index(t_list *st)
 {
 	int		i;
+
 	t_number*	tmp;
 	t_number*	tmp2;
 
@@ -56,7 +57,7 @@ int	find_smallest(t_list *st)
 		i++;
 		tmp = tmp->next;
 	}
-	printf("smallest is in position: %i\n", rtn);
+//	printf("smallest is in position: %i\n", rtn);
 	return (rtn);
 }
 
@@ -71,9 +72,9 @@ int	is_sorted(t_list *st_a, t_list *st_b)
 			return (-1);
 		num = num->next;
 	}
-	free(st_a);
-	free(st_b);
-	ft_printf("all sorted 😎\n");
+	free_stack(st_a);
+	free_stack(st_b);
+//	ft_printf("all sorted 😎\n");
 	exit (0);
 }
 
@@ -102,7 +103,7 @@ void	sort_three(t_list *st_a)
 	else if (n->value > n->next->value && n->next->value < \
 			n->next->next->value)
 		sa(st_a);
-
+//	free(st_a);
 }
 
 void	sort_four(t_list *st_a, t_list *st_b)
@@ -132,7 +133,6 @@ void	fabulous_five(t_list *st_a, t_list *st_b)
 	pb(st_a, st_b);
 	sort_four(st_a, st_b);
 	pa(st_b, st_a);
-
 }
 
 void	sort_numbers(t_list *st_a, t_list *st_b)
@@ -150,5 +150,6 @@ void	sort_numbers(t_list *st_a, t_list *st_b)
 		fabulous_five(st_a, st_b);
 	print_stack(st_a);
 	is_sorted(st_a, st_b);
+//	free(st_a);
 	exit(0);
 }

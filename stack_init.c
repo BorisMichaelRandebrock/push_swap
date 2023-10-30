@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:42 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/23 19:54:11 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:18:22 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,26 @@ t_list *stack_b_init(void)
 	stack_b->first = NULL;
 	return (stack_b);
 }
+
+void free_stack(t_list	*stack)
+{
+	t_number	*node;
+	t_number	*tmp;
+
+	if (stack != NULL)
+	{
+		node = stack->first;
+//		printf("node = %p\n", node);
+		while (node)
+		{
+			tmp = node->next;
+//			printf("libero %d, de la direccion %p\n", node->value, node);
+			free(node);
+			node = tmp;
+		}
+		free(tmp);
+//		printf("libero stack de la direccion %p\n", stack);
+		free(stack);
+	}
+}
+

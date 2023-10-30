@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/26 17:24:34 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:55:31 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ int	main(int argc, char **argv)
 	else
 		stack_a = no_split(argc, ++argv);
 	if (stack_a->len == 1)
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
 		exit(0);
+	}
+//	if (!stack_a)
+//		exit(0);
 //	print_stack(stack_a);
 	sort_numbers(stack_a, stack_b);
 //	swap(stack_a);
@@ -45,7 +51,10 @@ int	main(int argc, char **argv)
 	rrr(stack_a, stack_b);
 
 *///	print_stack(stack_a);
-//	print_stack(stack_b);
-//	free(arg);
+//	print_stack(stack_b)
+	
+	free_stack(stack_a);
+	free_stack(stack_b);
+//	exit(0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/26 17:50:12 by brandebr         ###   ########.fr        #
+#    Updated: 2023/10/30 11:31:10 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,10 @@ FT_PRINTF_DIR = ./ft_printf
 all: $(NAME) Makefile
 
 %.o: %.c push_swap.h ./libft/libft.h Makefile
-	$(CC)  $(FLAGS) -c $< -o $@ -fsanitize=address
+	$(CC)  $(FLAGS) -c $< -o $@ #-fsanitize=address
 
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME) -fsanitize=address
+	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME) #-fsanitize=address
 
 $(FT_PRINTF):
 	@make all -C $(FT_PRINTF_DIR)
