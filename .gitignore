@@ -18,3 +18,10 @@ debug.dSYM/
 .stack_init.c.swp
 stack_init.c.swp
 *.swp
+42Barcelona-PushSwap-ProChecker/
+ARG=2 1 0
+Push-Swap-Tester/
+pro_checker
+push_swap_test.sh
+traces.txt
+0

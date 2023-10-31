@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:24:21 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 19:57:50 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:00:09 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	print_stack(t_list *lst)
 	t_number *current = lst->first;
 	while (current)
 	{
-		//printf("%i - %i\n", current->value, current->index);
+		printf("%i - %i\n", current->value, current->index);
 		current = current->next;
 		i++;
 	}
