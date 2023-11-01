@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:51 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:54:52 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	is_sorted(t_list *st_a, t_list *st_b);
 void	sort_numbers(t_list *st_a, t_list *st_b);
 char	**free_args(char **args);
 void	free_stack(t_list *stack);
+void	get_radixal(t_list *st_a, t_list *st_b);
 
 #endif

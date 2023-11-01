@@ -6,14 +6,14 @@
 #    By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 16:00:33 by brandebr          #+#    #+#              #
-#    Updated: 2023/10/30 11:31:10 by brandebr         ###   ########.fr        #
+#    Updated: 2023/11/01 14:55:28 by brandebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = main.c utils.c stack_init.c utilities.c fst_moves.c push_n_swap.c\
-      rotates.c magic.c
+      rotates.c magic.c get_radixal.c
 
 OBJ = $(SRC:%.c=%.o)
 

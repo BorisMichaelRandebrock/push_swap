@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:25:34 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/31 18:34:54 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:25:13 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	find_smallest(t_list *st)
 		i++;
 		tmp = tmp->next;
 	}
-//		printf("smallest is in position: %i\n", pos);
+	//		printf("smallest is in position: %i\n", pos);
 	return (pos);
 }
 
@@ -75,7 +75,7 @@ int	is_sorted(t_list *st_a, t_list *st_b)
 	free_stack(st_a);
 	free_stack(st_b);
 	//	print_stack(st_a);
-//	ft_printf("all sorted 😎\n");
+//		ft_printf("all sorted 😎\n");
 	exit (0);
 }
 
@@ -181,155 +181,157 @@ void	fabulous_five(t_list *st_a, t_list *st_b)
 	}
 }
 
-   void    sort_until_100(t_list *st_a, t_list *st_b)
-   {
-   	int     i;
-   	int	n;
-
-	i = st_a->len;
-	n = find_smallest(st_a);
-  	 while (i > 5)
-  	 {
-//		 printf("1. El menor es: %i\n", n);
-		 if (n <= i / 2)
-		 {
-			  while (n > 0)
-   			{
-   				ra(st_a);
-				n--;
-  			 }
-  			 pb(st_a, st_b);
-  			 i--;
-		 }
-		 else if (n > i / 2)
-		 {
-			 while (i - n > 0)
-			 {
-				 rra(st_a);
-				 n++;
-			 }
-			 pb(st_a, st_b);
-			 i--;
-		 }
-//		 print_stack(st_a);
-//		 printf("\n----\n");
-//		 print_stack(st_b);
-		 n = find_smallest(st_a);
-//		 printf("2. El menor es: %i\n", n);
-
-   	}
-   	fabulous_five(st_a, st_b);
-   	while (st_b->len)
-   	pa(st_b, st_a);
-   }
-/*
 void    sort_until_100(t_list *st_a, t_list *st_b)
 {
 	int     i;
 	int	n;
 
-	i = st_a->len -1;
-	if (i > 5)
+	i = st_a->len;
+	n = find_smallest(st_a);
+	while (i > 5)
 	{
-		while (i >= 0)
+		//		 printf("1. El menor es: %i\n", n);
+		if (n <= i / 2)
+		{
+			while (n > 0)
 			{
-			n = find_smallest(st_a);
-			printf("que es n? :%d\n", n);
-			//if (n < st_a->len / 2)
-			if (n)
-				{
-				while (n)
-				{
-					ra(st_a);
-					n--;
-				}
-				pb(st_a, st_b);
-				i--;
-		2585		}
-			else
-			{
-				while (n)
-				{
-					rra(st_a);
-					n--;
-				}
-				pb(st_a, st_b);
-				i--;
+				ra(st_a);
+				n--;
 			}
-		fabulous_five(st_a, st_b);
-		while (st_b->len)
-			pa(st_b, st_a);
+			pb(st_a, st_b);
+			i--;
 		}
+		else if (n > i / 2)
+		{
+			while (i - n > 0)
+			{
+				rra(st_a);
+				n++;
+			}
+			pb(st_a, st_b);
+			i--;
+		}
+		//		 print_stack(st_a);
+		//		 printf("\n----\n");
+		//		 print_stack(st_b);
+		n = find_smallest(st_a);
+		//		 printf("2. El menor es: %i\n", n);
+
 	}
+	fabulous_five(st_a, st_b);
+	while (st_b->len)
+		pa(st_b, st_a);
+}
+/*
+   void    sort_until_100(t_list *st_a, t_list *st_b)
+   {
+   int     i;
+   int	n;
+
+   i = st_a->len -1;
+   if (i > 5)
+   {
+   while (i >= 0)
+   {
+   n = find_smallest(st_a);
+   printf("que es n? :%d\n", n);
+//if (n < st_a->len / 2)
+if (n)
+{
+while (n)
+{
+ra(st_a);
+n--;
+}
+pb(st_a, st_b);
+i--;
+2585		}
+else
+{
+while (n)
+{
+rra(st_a);
+n--;
+}
+pb(st_a, st_b);
+i--;
+}
+fabulous_five(st_a, st_b);
+while (st_b->len)
+pa(st_b, st_a);
+}
+}
 }*/
 /*
    void    sort_until_100(t_list *st_a, t_list *st_b)
    {
-   	//int     i;
-   	int	n;
+//int     i;
+int	n;
 
-	n = 1; 
-	//i = st_a->len;
-  	 while (st_a->len)
-  	 {
-  		 //n = find_smallest(st_a);
-  		 if (n == st_a->first->index)
-			{
-				pb(st_a, st_b);
+n = 1; 
+//i = st_a->len;
+while (st_a->len)
+{
+//n = find_smallest(st_a);
+if (n == st_a->first->index)
+{
+pb(st_a, st_b);
 pb(st_a, st_b);				n++;
-			}
-		else
-   		{
-			printf("n= %d\n", n);
-   			ra(st_a);
-			print_stack(st_a);
-   			//n--;
-  		 }
-  		 //i--;
-   	}
-   	fabulous_five(st_a, st_b);
-   	while (st_b->len)
-   		pa(st_b, st_a);
-   }*/
+}
+else
+{
+printf("n= %d\n", n);
+ra(st_a);
+print_stack(st_a);
+//n--;
+}
+//i--;
+}
+fabulous_five(st_a, st_b);
+while (st_b->len)
+pa(st_b, st_a);
+}*/
 /*   void    sort_until_100(t_list *st_a, t_list *st_b)
-   {
-   	int     i;
-   	int	n;
+     {
+     int     i;
+     int	n;
 
-	i = st_a->len;
-  	 while (i > 5)
-  	 {
-  		 n = find_smallest(st_a);
-  		 while (n)
-   		{
-   			ra(st_a);
-   			n--;
-  		 }
-  		 pb(st_a, st_b);
-  		 i--;
-   	}
-   	fabulous_five(st_a, st_b);
-   	while (st_b->len)
-   	pa(st_b, st_a);
-   }
-*/
-   void	sort_numbers(t_list *st_a, t_list *st_b)
-   {
-   is_sorted(st_a, st_b);
-   find_index(st_a);
-//   print_stack(st_a);
-   if (st_a->len == 2)
-   sa(st_a);
-   if (st_a->len == 3)
-   sort_three(st_a);
-   if (st_a->len == 4)
-   sort_four(st_a, st_b);
-   if (st_a->len == 5)
-   fabulous_five(st_a, st_b);
-   if (st_a->len > 5)
-   sort_until_100(st_a, st_b);
- //  print_stack(st_a);
-   is_sorted(st_a, st_b);
-//	free(st_a);
-exit(0);
+     i = st_a->len;
+     while (i > 5)
+     {
+     n = find_smallest(st_a);
+     while (n)
+     {
+     ra(st_a);
+     n--;
+     }
+     pb(st_a, st_b);
+     i--;
+     }
+     fabulous_five(st_a, st_b);
+     while (st_b->len)
+     pa(st_b, st_a);
+     }
+     */
+void	sort_numbers(t_list *st_a, t_list *st_b)
+{
+	is_sorted(st_a, st_b);
+	find_index(st_a);
+	//   print_stack(st_a);
+	if (st_a->len == 2)
+		sa(st_a);
+	if (st_a->len == 3)
+		sort_three(st_a);
+	if (st_a->len == 4)
+		sort_four(st_a, st_b);
+	if (st_a->len == 5)
+		fabulous_five(st_a, st_b);
+	if (st_a->len > 5 && st_a->len <= 10)
+		sort_until_100(st_a, st_b);
+	if (st_a->len >= 11)
+		get_radixal(st_a, st_b);
+	//  print_stack(st_a);
+	is_sorted(st_a, st_b);
+	//	free(st_a);
+	exit(0);
 }
