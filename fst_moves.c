@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:53 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/27 11:44:22 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:56:44 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap(t_list *st)
 {
-	int tmp;
-	int tmp2;
+	int	tmp;
+	int	tmp2;
 
 	tmp = st->first->value;
 	tmp2 = st->first->index;
@@ -66,7 +66,7 @@ void	swap(t_list *stack)
 
 void	push(t_list *src, t_list *dst)
 {
-	int		i;
+	int			i;
 	t_number	*tmp;
 	t_number	*tmp2;
 
@@ -103,7 +103,7 @@ void	rotate(t_list *st)
 	tmp3 = st->first->next;
 	tmp3->prev = NULL;
 	tmp2 = ft_lstlast(st);
-	tmp2->next = tmp; 
+	tmp2->next = tmp;
 	tmp->prev = tmp2;
 	tmp->next = NULL;
 	st->first = tmp3;
@@ -136,26 +136,23 @@ void	reverse_rotate(t_list *st)
 	t_number	*tmp1;
 	t_number	*tmp3;
 	t_number	*tmp2;
-	
+
 	tmp1 = st->first;
 	tmp3 = ft_lstlast(st);
- 	tmp2 = tmp3->prev;
+	tmp2 = tmp3->prev;
 	tmp3->next = tmp1;
 	tmp1->prev = tmp3;
 	st->first = tmp3;
 	st->first->prev = NULL;
 	tmp2->next = NULL;
-
-
-
+}
 	/*
 	st->first->prev = tmp3;
 	st->first = tmp3;
-	printf("first value = %i, next= %i\n", st->first->value, st->first->next->value);
+	printf("first value = %i, next= %i\n", st->first->value, \
+	st->first->next->value);
 	st->first->prev = NULL;
 	tmp2->next = NULL;*/
-
-
 /*
 	tmp2 = tmp3->prev;
 	printf("tmp3 = %i\n", tmp3->value);
@@ -182,4 +179,3 @@ void	reverse_rotate(t_list *st)
 	}
 	 printf("valor de cada nodo: %i\n", tmp1->value);
 */
-}

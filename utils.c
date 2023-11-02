@@ -6,18 +6,12 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:50:22 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/30 19:28:39 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:34:59 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error_exit(void)
-{
-	write(2, "Error\n", 6);
-	//ft_printf("Error\n");
-	exit(1);
-}
 void	check_numbers(char **argv)
 {
 	int	i;
@@ -33,7 +27,7 @@ void	check_numbers(char **argv)
 			j++;
 		while (argv[i][j])
 		{
-			while  (ft_isdigit(argv[i][j]) == 1)
+			while (ft_isdigit(argv[i][j]) == 1)
 				j++;
 			if (argv[i][j] && ft_isdigit(argv[i][j]) == 0)
 				print_error_exit();
@@ -43,21 +37,21 @@ void	check_numbers(char **argv)
 	}
 }
 
-
-void	check_double(char  **argv)
+void	check_double(char **argv)
 {
 	int	i;
 	int	j;
 	int	k;
+	int	temp;
 
 	i = 1;
 	j = i + 1;
 	k = 0;
 	while (argv[i])
 	{
-		int temp = ft_atoi(argv[i]);
 		j = 0;
 		k = 0;
+		temp = ft_atoi(argv[i]);
 		while (argv[j])
 		{
 			if (temp == ft_atoi(argv[j]))
@@ -65,19 +59,15 @@ void	check_double(char  **argv)
 			j++;
 		}
 		if (k > 1)
-		{
 			print_error_exit();
-			//ft_printf("Error\n");
-			exit(2);
-		}
-		i++;	
+		i++;
 	}
 }
 
 long	ft_atol(char *argv)
 {
-	int		i;
-	int		sign;
+	int			i;
+	int			sign;
 	long long	num;
 
 	i = 0;
@@ -104,7 +94,7 @@ long	ft_atol(char *argv)
 
 int	*outer_limits(int argc, char **argv)
 {
-	int		i;
+	int	i;
 	int	*args;
 
 	i = 0;
@@ -116,10 +106,8 @@ int	*outer_limits(int argc, char **argv)
 		if (ft_atol(argv[i]) < INT_MIN || ft_atol(argv[i]) > INT_MAX)
 		{
 			print_error_exit();
-		//	ft_printf("Error\n");
 			exit (3);
 		}
-
 		args[i] = (int)ft_atol(argv[i]);
 		i++;
 	}
@@ -134,17 +122,8 @@ int	*err_hunter(int argc, char **argv)
 
 	i = 0;
 	args = NULL;
-	//args = malloc(sizeof(int) * (argc));
-//	if (!args)
-//		exit(4);
 	check_numbers(argv);
 	check_double(argv);
 	args = outer_limits(argc, argv);
-	/*	while (args[i])
-		{
-		ft_printf("%i\n", args[i]);
-		i++;
-		}
-		*/	
 	return (args);
 }

@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:59:09 by brandebr          #+#    #+#             */
-/*   Updated: 2023/11/01 15:18:56 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:38:14 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	max_num(t_list *st)
 {
-	int		biggest;
-	int		i;
-	int		pos;
 	t_number	*tmp;
+	int			biggest;
+	int			i;
+	int			pos;
 
 	tmp = st->first;
 	biggest = tmp->index;
@@ -36,22 +36,14 @@ int	max_num(t_list *st)
 	return (pos);
 }
 
-void	get_radixal(t_list *st_a, t_list *st_b)
+static void	do_while(int max_bits, int size, t_list *st_a, t_list *st_b)
 {
+	int			i;
+	int			j;
 	t_number	*tmp;
-	int		i;
-	int		j;
-	int		size;
-	int		max_pos;
-	int		max_bits;
-	
+
 	i = 0;
 	tmp = st_a->first;
-	size = st_a->len;
-	max_pos = max_num(st_a);
-	max_bits = 0;
-	while (size >> max_bits != 0)
-		max_bits++;
 	while (i < max_bits)
 	{
 		j = 0;
@@ -67,4 +59,16 @@ void	get_radixal(t_list *st_a, t_list *st_b)
 			pa(st_b, st_a);
 		i++;
 	}
+}
+
+void	get_radixal(t_list *st_a, t_list *st_b)
+{
+	int		size;
+	int		max_bits;
+
+	size = st_a->len;
+	max_bits = 0;
+	while (size >> max_bits != 0)
+		max_bits++;
+	do_while(max_bits, size, st_a, st_b);
 }
