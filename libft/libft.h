@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:58:14 by brandebr          #+#    #+#             */
-/*   Updated: 2023/10/26 18:14:17 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/03 11:22:42 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_number
 {
-	int		index;
-	int		value;
+	int				index;
+	int				value;
 	struct s_number	*next;
 	struct s_number	*prev;
 }	t_number;
@@ -30,10 +30,11 @@ typedef struct s_list
 {
 	t_number		*first;
 	void			*content;
-//	int			index;
-	int			len;
+	int				index;
+	int				len;
 }	t_list;
 
+t_number*ft_lstlast(t_list *lst);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -45,7 +46,7 @@ char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(char *s, int c);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int	 ft_str_cmp(const char *s1, const char *s2);
+int		ft_str_cmp(const char *s1, const char *s2);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -73,7 +74,6 @@ t_list	*ft_lstnew(int *content);
 void	ft_lstadd_back(t_number **lst, t_number *nod);
 //void	ft_lstadd_front(t_list **lst, t_list *nod);
 int		ft_lstsize(t_list *lst);
-t_number	*ft_lstlast(t_list *lst);
 //void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 //void	ft_lstclear(t_list **lst, void (*del)(void *));

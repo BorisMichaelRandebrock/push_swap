@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/11/03 10:39:31 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:55:42 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
 
-int     main(int argc, char **argv);
-int	*err_hunter(int argc, char **argv);
+int		main(int argc, char **argv);
+int		*err_hunter(int argc, char **argv);
 t_list	*stack_init(int *args, int argc);
 long	ft_atol(char *argv);
 void	print_stack(t_list *lst);
@@ -43,17 +43,16 @@ void	rr(t_list *stack_a, t_list *stack_b);
 void	rra(t_list *stack_a);
 void	rrb(t_list *stack_b);
 void	rrr(t_list *stack_a, t_list *stack_b);
-int	is_sorted(t_list *st_a, t_list *st_b);
+int		is_sorted(t_list *st_a, t_list *st_b);
 void	sort_numbers(t_list *st_a, t_list *st_b);
 char	**free_args(char **args);
 void	free_stack(t_list *stack);
 void	get_radixal(t_list *st_a, t_list *st_b);
 void	print_error_exit(void);
 void	find_index(t_list *st);
-int	find_smallest(t_list *st);
-int	is_sorted(t_list *st_a, t_list *st_b);
+int		find_smallest(t_list *st);
+int		is_sorted(t_list *st_a, t_list *st_b);
 void	sort_three(t_list *st_a);
 void	sort_four(t_list *st_a, t_list *st_b);
-void	ra(t_list *stack_a);
 
 #endif
