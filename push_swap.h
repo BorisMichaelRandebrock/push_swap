@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:17:55 by brandebr          #+#    #+#             */
-/*   Updated: 2023/11/02 12:23:48 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:39:31 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,11 @@ char	**free_args(char **args);
 void	free_stack(t_list *stack);
 void	get_radixal(t_list *st_a, t_list *st_b);
 void	print_error_exit(void);
+void	find_index(t_list *st);
+int	find_smallest(t_list *st);
+int	is_sorted(t_list *st_a, t_list *st_b);
+void	sort_three(t_list *st_a);
+void	sort_four(t_list *st_a, t_list *st_b);
+void	ra(t_list *stack_a);
 
 #endif
