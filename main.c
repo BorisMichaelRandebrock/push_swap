@@ -6,7 +6,7 @@
 /*   By: brandebr <brandebr@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:20 by brandebr          #+#    #+#             */
-/*   Updated: 2023/11/02 17:43:53 by brandebr         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:04:37 by brandebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 	{
 		write(2, "Error\n", 6);
-		return (-1);
+		exit (-1);
 	}
 	if (!ft_strlen(argv[1]))
 	{
